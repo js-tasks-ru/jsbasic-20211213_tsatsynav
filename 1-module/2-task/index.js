@@ -1,20 +1,25 @@
-/**
- * Эту функцию трогать не нужно
- */
 function print(text) {
   console.log(text);
 }
 
-/**
- * Эту функцию нужно поменять так,
- * чтобы функция sayHello работала корректно
- */
-function isValid(name) {
-  // ваш код...
+let userName;
+let userNameLenght;
+
+function isValid(userName) {
+  userNameLenght = userName.length;
+  if (userNameLenght < 4) {
+    return false;
+  } else if (userName.includes(' ')) {
+    return false;
+  } else if (userName == null) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 function sayHello() {
-  let userName = prompt('Введите ваше имя');
+  userName = prompt('Введите ваше имя');
 
   if (isValid(userName)) {
     print(`Welcome back, ${userName}!`);
@@ -22,3 +27,5 @@ function sayHello() {
     print('Некорректное имя');
   }
 }
+
+sayHello();
