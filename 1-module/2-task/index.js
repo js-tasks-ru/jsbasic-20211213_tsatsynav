@@ -1,17 +1,15 @@
+'use strict';
+
 function print(text) {
   console.log(text);
 }
 
-let userName;
-let userNameLenght;
-
-function isValid(userName) {
-  userNameLenght = userName.length;
-  if (userNameLenght < 4) {
+function isValid(name) {
+  if (name.includes(' ')) {
     return false;
-  } else if (userName.includes(' ')) {
+  } else if (name.length < 4) {
     return false;
-  } else if (userName == null) {
+  } else if (name == null) {
     return false;
   } else {
     return true;
@@ -19,7 +17,7 @@ function isValid(userName) {
 }
 
 function sayHello() {
-  userName = prompt('Введите ваше имя');
+  let userName = prompt('Введите ваше имя');
 
   if (isValid(userName)) {
     print(`Welcome back, ${userName}!`);
@@ -29,3 +27,5 @@ function sayHello() {
 }
 
 sayHello();
+
+// TODO: прошу разъяснить порядок написания функции согласно условию реагирования на null.
