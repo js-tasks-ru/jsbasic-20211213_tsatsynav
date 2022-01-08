@@ -5,11 +5,11 @@ function print(text) {
 }
 
 function isValid(name) {
-  if (name.includes(' ')) {
+  if (name === null) {
+    return false;
+  } else if (name.includes(' ')) {
     return false;
   } else if (name.length < 4) {
-    return false;
-  } else if (name == null) {
     return false;
   } else {
     return true;
@@ -27,5 +27,3 @@ function sayHello() {
 }
 
 sayHello();
-
-// TODO: прошу разъяснить порядок написания функции согласно условию реагирования на null.
